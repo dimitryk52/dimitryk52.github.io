@@ -1,7 +1,690 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<head>
+    <meta charset="utf-8">
+    <title>VDOTKE</title>
+    <style type="text/css">
+		
+		@font-face { 
+  font-family: 'Roboto';
+  src: url('src/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+		
+        html, body {
+            height: 100%;
+        }
+
+        a, a:visited, a:active {
+            color: inherit;
+            text-decoration: none;
+        }
+		
+        .menu_block {
+            padding: 10px;
+            float: left;
+            position: relative;
+            margin: 10px;
+            text-align: right;
+            line-height: 200%;
+            vertical-align: top;
+        }
+
+        .menu_block > a {
+            display: block;
+            color: #285473;
+        }
+
+        .content_block {
+            background: #ffffff;
+            padding: 10px;
+            position: relative;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+		.post_header {
+            position: relative;
+  			display: flex;
+  			flex-direction: row;
+  			flex-wrap: nowrap;
+  			justify-content: space-between;
+			align-items: center;
+            border-radius: 5px;
+        }
+
+        .content_block__header {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e7e8ec;
+            color: #828282;
+            text-transform: uppercase;
+        }
+
+        .status_block {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: row;
+            border-radius: 5px;
+        }
+		.post_status_block {
+            position: relative;
+            display: flex;
+            justify-content:flex-end;
+            align-content: right;
+            flex-direction: row;
+            border-radius: 5px;
+        }
+
+        .status_cell {
+            position: relative;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+            flex-direction: row;
+            width: 25%;
+            margin: 10px;
+        }
+
+        .blocktop {
+            background: #507299;
+			display:flex;
+
+            justify-content: center;
+
+			align-items: center;
+            height: 50px;
+
+        }
+
+        .centered-wrapper {
+            position: relative;
+            text-align: center;
+            margin: 0;
+            font-family: Roboto, Helvetica, Arial, Verdana, Tahoma, sans;
+            font-size: 14px;
+        }
+
+        .centered-wrapper:before {
+            position: relative;
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .centered-content {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0;
+        }
+
+        .button {
+            background-color: #7293b6;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 33%;
+        }
+
+        .button:hover {
+            background-color: #507299;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 33%;
+            cursor: pointer;
+        }
+		.button_post {
+            background-color: #7293b6;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 25%;
+			float:right;
+			margin-top:8px;
+        }
+
+        .button_post:hover {
+            background-color: #507299;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 25%;
+            cursor: pointer;
+			margin-top:8px;
+			float: right;
+        }
+		.button_close {
+            border: none;
+            color: white;
+			width: 24px;
+			height: 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 8px;
+            border-radius: 5px;
+			float:right;
+			vertical-align: middle;
+			color: #000;
+			padding: 4px;
+        }
+
+        .button_close:hover {
+            border: none;
+            color: white;
+			width: 24px;
+            height: 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+			vertical-align: middle;
+			color: #000;
+			padding: 4px;
+        }
+		.close_icon {
+            height: 16px;
+            width: 16px;
+            vertical-align: middle;
+            margin: 4px 0;
+			opacity: 0.1;
+        }
+		.close_icon:hover {
+            height: 16px;
+            width: 16px;
+            vertical-align: middle;
+            margin: 4px 0;
+			opacity: 0.3;
+        }
+		
+		.friend_grid {
+			padding: 0;
+  			margin: 0;
+  			list-style: none;
+    		display: flex;				
+  			flex-wrap:wrap;
+			justify-content: center;
+			width: auto;
+		}
+		
+		.friend_block {
+			display: flex;
+            align-content: center;
+			align-items: center;
+            flex-direction: column;
+			text-align: center;
+			font-size: 10px;
+			flex-grow: 1;
+  			width: 30%;
+		}
+
+        .blocktop {
+            color: white;
+            font-weight: bold;
+            font-size: x-large;
+			letter-spacing: 2px;
+			font-kerning: normal;
+        }
+
+        .avatar {
+            border-radius: 15px;
+			width: 100%;
+        }
+
+        .profile {
+            text-align: left;
+        }
+
+        .profile__avatar {
+            height: 36px;
+			width: 36px;
+            border-radius: 50%;
+            vertical-align:middle;
+            margin: 5px 0;
+        }
+
+        .profile__name {
+            margin-left: 5px;
+            color: #285473;
+            vertical-align: middle;
+			position: relative;
+        }
+
+        .profile__date {
+            float: right;
+            color: #939393;
+            vertical-align: middle;
+			
+        }
+
+        .profile.post {
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+
+        }
+
+        .post__text {
+            text-align: left;
+            max-width: 564px;
+			font-size:18px;
+			padding:10px;
+        }
+
+        .post__img {
+            max-width: 564px;
+        }
+
+        .post__img img {
+            max-width: 400px;
+        }
+
+        .post__footer {
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #e7e8ec;
+        }
+
+        .post__actions {
+            text-align: left;
+        }
+
+        .post__actions div {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .post__actions img {
+            height: 16px;
+            width: 16px;
+            vertical-align: middle;
+        }
+
+        .post__actions span {
+            vertical-align: middle;
+            color: #285473;
+        }
+
+        #form {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.7);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        #form .content_block {
+            margin: 250px auto;
+            width: 600px;
+        }
+
+        #form .content_block > textarea {
+            height: 200px;
+			border: 1px solid #e7e8ec;
+			font-family: Roboto, Helvetica, Arial, Verdana, Tahoma, sans;
+			font-size:36px;
+        }
+    </style>
+    <script src="src/jquery-3.2.1.min.js"></script>
+
+</head>
+<body class="centered-wrapper" bgcolor=#edeef0>
+<div id="form" style="display: none">
+    <div class="content_block" style="background: #edeef0">
+        <div class="post_header">
+        	<div align="left" style="float:left">
+            	<img src="img/noavatar.png" class="profile__avatar" >
+            	<span class="profile__name" class="profile__name" style="vertical-align:middle">Имя "nickname" фамилия</span>
+            </div>
+            <div class="button_close" id="close_form"><img src="img/close.png" class="close_icon"></div>
+        </div>
+        <textarea></textarea>
+        <div class="post_status_block">
+        	<div class="button_post" id="show_post">Опубликовать</div>
+        </div>
+    </div>
+</div>
+<div class="blocktop">
+		<div class="centered-content" style="width:54px; margin:10px; padding:10px">
+		</div>
+        <div class="centered-content" style="width:184px; margin:10px; padding:10px; text-align:left">
+        VDOTKE <sup>beta</sup>
+		</div>
+        <div class="centered-content" style="width:564px; margin:10px; padding:10px">
+		</div>
+</div>
+<div class="centered-content">
+    <div class="menu_block">
+        <a href="#">Моя Страница</a>
+        <a href="#">Новости</a>
+        <a href="#">Рофлы</a>
+        <a href="#">Лунные факты</a>
+        <a href="#">Группы</a>
+        <a href="#">Инвайты</a>
+        <a href="#">Шмотки</a>
+    </div>
+</div>
+<div class="centered-content">
+    <div class="content_block"><img class="avatar" src="img/noavatar.png"></div>
+    <div class="content_block">
+        <span class="content_block__header">Друзья</span>
+        <div class="friend_grid">
+        	<div class="friend_block">
+            	<img src="img/hitr.jpg" class="profile__avatar">
+            	Адександр
+        	</div>
+        	<div class="friend_block">
+            	<img src="img/danila.jpg" class="profile__avatar">
+            	Данила
+        	</div>
+        	<div class="friend_block">
+            	<img src="img/pavel.jpg" class="profile__avatar">
+            	Павел
+        	</div>
+        	<div class="friend_block">
+            	<img src="img/burzum.jpg" class="profile__avatar">
+            	Сергей
+        	</div>
+        	<div class="friend_block">
+            	<img src="img/slava.jpg" class="profile__avatar">
+            	Вячеслав
+        	</div>
+        	<div class="friend_block">
+            	<img src="img/david.jpg" class="profile__avatar">
+            	Давид
+        	</div>
+        </div>
+    </div>
+    <div class="content_block">
+        <span class="content_block__header">подписки</span>
+        <a href="#" class="profile">
+            <img src="img/dota2ruhub.jpg" class="profile__avatar">
+            <span class="profile__name">Dota 2 RuHub</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="img/ns.jpg" class="profile__avatar">
+            <span class="profile__name">Ярослав NS Кузнецов</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="img/ruhub.jpg" class="profile__avatar">
+            <span class="profile__name">RuHub Studio</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="img/cyber.jpg" class="profile__avatar">
+            <span class="profile__name">Cybersport.ru</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="img/stud.jpg" class="profile__avatar">
+            <span class="profile__name">Студия Аналитики | Dota 2</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="img/kbu.jpg" class="profile__avatar">
+            <span class="profile__name">КБУ!</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="img/mhgny.jpg" class="profile__avatar">
+            <span class="profile__name">MHGNy page</span>
+        </a>
+    </div>
+</div>
+<div class="centered-content">
+    <div class="content_block" align="left">
+        <table cellpadding="5px" width="100%">
+            <tr>
+                <td><font size="5">Имя "nickname" фамилия</font></td>
+                <td align="right"><font color="#828282">Online</font></td>
+            </tr>
+        </table>
+        <hr size="1" width="564px" noshade color="#e7e8ec">
+        <table cellpadding="5px">
+            <tr>
+                <td width="50%"><font color="#828282">Дата рождения:</font></td>
+                <td><font color="#42648b"><a href="#">11.09.2001</a></font></td>
+            </tr>
+            <tr>
+                <td width="50%"><font color="#828282">Семейное положение:</font></td>
+                <td><font color="#42648b"><a href="#">Холост</a></font></td>
+            </tr>
+            <tr>
+                <td width="50%"><font color="#828282">Образование:</font></td>
+                <td><font color="#42648b"><a href="#">Неоконченное среднее</a></font></td>
+            </tr>
+            <tr>
+                <td width="50%"><font color="#828282">Любимый герой:</font></td>
+                <td><font color="#42648b"><a href="#">Pudge</a></font></td>
+            </tr>
+        </table>
+        <hr size="1" width="564px" noshade color="#e7e8ec">
+        <div class="status_block">
+
+            <div class="status_cell"><font size="5" color="#42648b"><a href="#">6</a></font><br><font size="1"
+                                                                                                      color="#828282">друзей</font>
+            </div>
+            <div class="status_cell"><font size="5" color="#42648b"><a href="#">1945</a></font><br><font size="1"
+                                                                                                        color="#828282">ммр</font>
+            </div>
+            <div class="status_cell"><font size="5" color="#42648b"><a href="#">28%</a></font><br><font size="1"
+                                                                                                        color="#828282">винрейт</font>
+            </div>
+            <div class="status_cell"><font size="5" color="#42648b"><a href="#">69</a></font><br><font size="1"
+                                                                                                       color="#828282">репортов</font>
+            </div>
+            <div class="status_cell"><font size="5" color="#42648b"><a href="#">0</a></font><br><font size="1"
+                                                                                                      color="#828282">инвайтов
+                на инт</font></div>
+
+        </div>
+    </div>
+    <div class="content_block">
+        <div class="status_block">
+            <div class="button" id="create">Новый пост</div>
+            <div class="button">Добавить фото</div>
+            <div class="button">Загрузить видео</div>
+        </div>
+    </div>
+    <div id="new_post" class="content_block" style="display: none;">
+        <a href="#" class="profile post">
+            <img src="img/noavatar.png" class="profile__avatar">
+            <span class="profile__name">Имя "nickname" фамилия</span>
+            <span class="profile__date">вчера в 00:00</span>
+        </a>
+        <div class="post__text"></div>
+        <div class="post__footer">
+            <div class="post__actions">
+                <div>
+                    <img src="img/like.png">
+                    <span>9000</span>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="img/comment.png">
+                        <span>Комментировать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_block">
+        <a href="#" class="profile post">
+            <img src="img/noavatar.png" class="profile__avatar">
+            <span class="profile__name">Имя "nickname" фамилия</span>
+            <span class="profile__date">вчера в 00:00</span>
+        </a>
+        <div class="post__text">
+            Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="post__footer">
+            <div class="post__actions">
+                <div>
+                    <img src="img/like.png">
+                    <span>9000</span>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="img/comment.png">
+                        <span>Комментировать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_block">
+        <a href="#" class="profile post">
+            <img src="img/noavatar.png" class="profile__avatar">
+            <span class="profile__name">Имя "nickname" фамилия</span>
+            <span class="profile__date">вчера в 00:00</span>
+        </a>
+        <div class="post__img">
+            <img src="post.jpg">
+        </div>
+        <div class="post__footer">
+            <div class="post__actions">
+                <div>
+                    <img src="img/like.png">
+                    <span>9000</span>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="img/comment.png">
+                        <span>Комментировать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_block">
+        <a href="#" class="profile post">
+            <img src="img/noavatar.png" class="profile__avatar">
+            <span class="profile__name">Имя "nickname" фамилия</span>
+            <span class="profile__date">вчера в 00:00</span>
+        </a>
+        <div class="post__text">
+            Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="post__footer">
+            <div class="post__actions">
+                <div>
+                    <img src="img/like.png">
+                    <span>9000</span>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="img/comment.png">
+                        <span>Комментировать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_block">
+        <a href="#" class="profile post">
+            <img src="img/noavatar.png" class="profile__avatar">
+            <span class="profile__name">Имя "nickname" фамилия</span>
+            <span class="profile__date">вчера в 00:00</span>
+        </a>
+        <div class="post__text">
+            Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="post__footer">
+            <div class="post__actions">
+                <div>
+                    <img src="img/like.png">
+                    <span>9000</span>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="img/comment.png">
+                        <span>Комментировать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_block">
+        <a href="#" class="profile post">
+            <img src="img/noavatar.png" class="profile__avatar">
+            <span class="profile__name">Имя "nickname" фамилия</span>
+            <span class="profile__date">вчера в 00:00</span>
+        </a>
+        <div class="post__img">
+            <img src="post.jpg">
+        </div>
+        <div class="post__footer">
+            <div class="post__actions">
+                <div>
+                    <img src="img/like.png">
+                    <span>9000</span>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="img/comment.png">
+                        <span>Комментировать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#create').on('click', function () {
+            $('#form').show();
+        });
+
+        $('#show_post').on('click', function () {
+            $('#form').hide();
+            $('#new_post').find('.post__text').html($('textarea').val());
+            $('#new_post').show();
+            $('textarea').val('');
+        });
+
+        $('#close_form').on('click', function () {
+            $('#form').hide();
+            $('textarea').val('');
+        });
+    });
+</script>
 </body>
 </html>
