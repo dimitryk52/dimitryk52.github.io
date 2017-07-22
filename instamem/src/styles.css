@@ -118,8 +118,9 @@ body > footer > .button {
 }
 
 .like {
-    height: 56px !important;
-    width: 56px !important;
+    opacity: 0;
+    height: 56px;
+    width: 56px;
     position: absolute;
     align-self: center;
 }
