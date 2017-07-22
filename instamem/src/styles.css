@@ -1,0 +1,125 @@
+@font-face {
+    font-family: Billabong;
+    src: url('Billabong.ttf');
+}
+@font-face {
+    font-family: ProximaNova-Reg;
+    src: url('ProximaNova-Reg.otf');
+}
+@font-face {
+    font-family: ProximaNova-Semibold;
+    src: url('ProximaNova-Semibold.otf');
+}
+@font-face {
+    font-family: ProximaNova-Bold;
+    src: url('ProximaNova-Bold.otf');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > header {
+    font-family: Billabong, sans-serif;
+    text-align: center;
+    background: #FAFAFA;
+}
+
+body > header > h1 {
+    margin: 5px 0;
+}
+
+body > main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+}
+
+body > main > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: ProximaNova-Semibold, sans-serif;
+}
+
+body > main > header > img {
+    height: 32px;
+    width: 32px;
+    margin: 6px;
+    border-radius: 50%;
+}
+
+body > main > header > h3 {
+    flex: 1;
+    margin: 0;
+}
+
+body > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: ProximaNova-Semibold, sans-serif;
+    background: #FAFAFA;
+}
+
+body > footer > .button {
+    height: 24px;
+    width: 24px;
+    margin: 10px;
+    background: gray;
+}
+
+.owl-carousel {
+    flex: 1;
+    display: flex;
+}
+
+.owl-stage-outer, .owl-stage, .owl-item {
+    height: 100%;
+}
+
+.item, .item > article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item > article {
+}
+
+.item > article > img {
+}
+
+.item > footer {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.item > footer > img {
+    height: 48px;
+    width: 48px !important;
+    margin: 0 10px;
+}
+
+.item > footer > span {
+    font-size: 32px;
+    font-family: ProximaNova-Reg, sans-serif;
+}
+
+.like {
+    height: 56px !important;
+    width: 56px !important;
+    position: absolute;
+    align-self: center;
+}
