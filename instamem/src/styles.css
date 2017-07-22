@@ -29,6 +29,7 @@ body {
 body > header {
     font-family: Billabong, sans-serif;
     text-align: center;
+	color: #262626;
     background: #FAFAFA;
 }
 
@@ -47,6 +48,7 @@ body > main > header {
     display: flex;
     flex-direction: row;
     align-items: center;
+	color: #262626;
     font-family: ProximaNova-Semibold, sans-serif;
 }
 
@@ -67,6 +69,7 @@ body > footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+	color: #262626;
     font-family: ProximaNova-Semibold, sans-serif;
     background: #FAFAFA;
 }
@@ -113,6 +116,7 @@ body > footer > .button {
 
 .item > footer > span {
     font-size: 32px;
+	color: #262626;
     font-family: ProximaNova-Reg, sans-serif;
 }
 
